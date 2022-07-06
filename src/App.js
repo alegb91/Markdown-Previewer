@@ -6,11 +6,11 @@ import ReactMarkdown from 'react-markdown'
 
 const Result = (props)=> {
 
-    console.log(props.algo)
+    console.log(props.info)
 
     return (
       <div id="preview">
-       <ReactMarkdown children={props.algo}/>
+       <ReactMarkdown children={props.info}/>
       </div>
     )
 }
@@ -46,10 +46,16 @@ function App() {
   }
 
   return (
-    <div id="container">
+    <div className="container" id="container">
+      <h1 className="row mt-5">Markdown Previewer</h1>
+      <div className="row d-flex justify-content-center m-0">
+        <div className="col-10 d-flex justify-content-center">
      <textarea id="editor" value={text} onChange={handleChange}/>
-     
-     <Result algo={text}/>
+        </div>
+        <div className="col-10">
+     <Result info={text}/>
+        </div>
+     </div>
     </div>
   );
 }
